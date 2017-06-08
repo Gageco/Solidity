@@ -36,6 +36,7 @@ contract MyToken is mortal {
   }
 
   function transFer(address _to, uint256 amount) {      //this is a captical F because I want to see how the function names are created, like it breaks them up somehow and I want to see if it is at the capital letters. Ill report back once I deploy this on the chain
+    //update: So that is how it names functions, it take the word to the first capital and then goes from there so tansferToken -> Transfer Token and traNsfertoKen -> Tra Nsferto Ken, nice
     if (balanceOf[_to] < amount || balanceOf[msg.sender] + amount <= balanceOf[msg.sender]) {
       throw;
     }
@@ -47,3 +48,4 @@ contract MyToken is mortal {
   }
 
 }
+//what selfdestructing the contract does is it just kinda stops all the functions or something and then doesnt allow you to do anything from the admin page so you just have to delete it. Add this in any future coins unless you want to not have it kill itself.

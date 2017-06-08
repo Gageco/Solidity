@@ -16,3 +16,7 @@ contract MyToken {
         balanceOf[_to] += _value;                            // Add the same to the recipient
     }
 }
+
+/*
+this token is useless, really hard to transfer, just kind of a pain, use 02_anotherViableToken if you must
+*/
