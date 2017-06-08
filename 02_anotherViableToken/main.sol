@@ -1,6 +1,4 @@
-pragma solidity ^0.4.11
-
-event Transfer(address indexed from, address indexed to, uint256 value);
+pragma solidity ^0.4.11;
 
 contract MyToken{
   mapping (address => uint256) public balanceOf;                                //map amount of coin to addresses
@@ -9,8 +7,11 @@ contract MyToken{
   string public symbol;
   uint8 public decimals;
 
+  //Events
+  event Transfer(address indexed from, address indexed to, uint256 value);
+
   function MyToken(uint256 initialSupply, string tokenName, string tokenSymbol) {                                             //give initialSupply to person who creates contract, name has to be the same as start function
-    balanceOf(msg.sender) = initialSupply;                                      //will be given in compiler
+    balanceOf[msg.sender] = initialSupply;                                      //will be given in compiler
     name = tokenName;
     symbol = tokenSymbol;
   }
